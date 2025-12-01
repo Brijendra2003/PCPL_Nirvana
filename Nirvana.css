@@ -67,8 +67,14 @@ html {
 
 .hero-sub-container {
   position: absolute;
-  top: 30%;
-  right: 10vw;
+  width: 100% !important;
+  top: 60%;
+  right: 0vw;
+   background: rgba(255, 255, 255, 0.54);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
 }
 
 .bg-white-glass {
