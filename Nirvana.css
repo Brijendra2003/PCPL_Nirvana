@@ -373,10 +373,9 @@ nav ul li a:hover {
   position: absolute;
   color: white;
   font-size: 40px;
-  font-weight: 600;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-family: "Sunset heaven";
+  font-weight: 500;
+  font-family: "Poppin";
+  /* font-family: "Sunset heaven"; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -533,10 +532,10 @@ nav ul li a:hover {
 .my-card-body {
   width: 300px;
   padding: 20px;
-  border: solid 2px #274c77;
+  /* border: solid 2px #274c77; */
   border-radius: 20px;
   font-size: 30px;
-  margin-top: -100px;
+  margin-top: -70px;
   padding-top: 100px;
   z-index: 1;
   color: #274c77;
@@ -599,11 +598,12 @@ nav ul li a:hover {
 .my-card-body2 {
   width: 300px;
   padding: 20px;
-  border: solid 2px #274c77;
+  /* border: solid 2px #274c77; */
   border-radius: 20px;
   font-size: 30px;
-  margin-top: -50px;
-  padding-top: 50px;
+  margin-bottom: -40px;
+  padding-top: 0px;
+  line-height: 25px;
   z-index: 1;
   min-height: 180px;
   display: flex;
