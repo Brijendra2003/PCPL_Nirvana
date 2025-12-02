@@ -6,7 +6,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 @font-face {
@@ -70,7 +70,7 @@ html {
   width: 100% !important;
   top: 60%;
   right: 0vw;
-   background: rgba(255, 255, 255, 0.54);
+  background: rgba(255, 255, 255, 0.54);
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.8px);
@@ -377,6 +377,10 @@ nav ul li a:hover {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-family: "Sunset heaven";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
 
 .font-s-h {
