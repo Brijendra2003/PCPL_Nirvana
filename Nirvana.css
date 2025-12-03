@@ -1,5 +1,5 @@
 .container-xl {
-  width: 1200px;
+  width: 1200px !important;
   padding: 0px;
 }
 
@@ -66,7 +66,7 @@ html {
 .hero-sub-container {
   position: absolute;
   width: 100% !important;
-  top: 50%;
+  top: 40vh;
   right: 0vw;
   background: rgba(255, 255, 255, 0.54);
   border-radius: 10px;
