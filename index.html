@@ -997,7 +997,7 @@
           class="container-fluid w-48 boxShadow"
           style="
             padding: 0px;
-            height: 450px;
+            height: 560px;
             border-radius: 10px;
             overflow: hidden;
           "
@@ -1010,7 +1010,7 @@
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2612.5963112759973!2d72.8447106!3d19.1940567!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6e728b01dc7%3A0x2d8f3e554b211b4!2sJain%20Dairy!5e1!3m2!1sen!2sin!4v1764759556772!5m2!1sen!2sin"
             width="600"
-            height="450"
+            height="100%"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
@@ -1370,8 +1370,6 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -1382,113 +1380,6 @@
 
     <script>
       AOS.init();
-      document.addEventListener("DOMContentLoaded", () => {
-        const sections = document.querySelectorAll("div[id]");
-        const navLinks = document.querySelectorAll("nav ul li a");
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const id = entry.target.getAttribute("id");
-
-              if (entry.isIntersecting) {
-                navLinks.forEach((link) => link.classList.remove("active"));
-                const activeLink = document.querySelector(
-                  `nav ul li a[href="#${id}"]`
-                );
-                if (activeLink) activeLink.classList.add("active");
-              }
-            });
-          },
-          {
-            threshold: 0.6, // section must be 60% visible
-            rootMargin: "-200px 0px 0px 0px", // ⭐ Bonus fix for sticky sections
-          }
-        );
-
-        sections.forEach((section) => observer.observe(section));
-      });
-    </script>
-    <!-- GSAP + ScrollTrigger -->
-
-    <script>
-      /* Verified setup for GSAP horizontal scroller */
-      gsap.registerPlugin(ScrollTrigger);
-
-      (function () {
-        const section = document.querySelector("#horizontal");
-        const wrapper = section.querySelector(".horizontal-wrapper");
-        let tween, scrollTriggerInstance;
-
-        function setup() {
-          // kill previous instances when re-setting (resize)
-          if (tween) {
-            tween.kill();
-            tween = null;
-          }
-          if (scrollTriggerInstance) {
-            scrollTriggerInstance.kill();
-            scrollTriggerInstance = null;
-          }
-          ScrollTrigger.getAll().forEach((st) => st.kill()); // be safe
-
-          const panels = wrapper.children;
-          const totalPanels = panels.length;
-
-          // total width of wrapper and viewport width
-          const wrapperWidth = wrapper.scrollWidth;
-          const vw = window.innerWidth;
-
-          // if mobile (or small width), skip pinning and horizontal translate
-          if (window.matchMedia("(max-width: 640px)").matches) {
-            // remove inline transform if any
-            wrapper.style.transform = "none";
-            return;
-          }
-
-          // amount to translate horizontally = wrapperWidth - viewportWidth
-          const translateX = wrapperWidth - vw;
-
-          // Create GSAP tween
-          tween = gsap.to(wrapper, {
-            x: () => -translateX, // negative translate to move left
-            ease: "none",
-            paused: true,
-          });
-
-          // Create ScrollTrigger to drive the tween
-          scrollTriggerInstance = ScrollTrigger.create({
-            animation: tween,
-            trigger: section,
-            start: "top top",
-            end: () => "+=" + translateX, // end after we've scrolled enough to move fully
-            scrub: 0.8,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            // markers: true // <-- uncomment while debugging
-          });
-
-          // refresh to ensure values are correct
-          ScrollTrigger.refresh();
-        }
-
-        // Setup after page load (ensures images/fonts measured)
-        window.addEventListener("load", () => {
-          setup();
-        });
-
-        // Recalculate on resize with debounce
-        let rTO;
-        window.addEventListener("resize", () => {
-          clearTimeout(rTO);
-          rTO = setTimeout(() => {
-            // Important: refresh ScrollTrigger and re-setup
-            ScrollTrigger.refresh();
-            setup();
-          }, 120);
-        });
-      })();
     </script>
 
     <script>
