@@ -64,10 +64,9 @@ html {
 }
 
 .hero-sub-container {
-  position: absolute;
-  width: 100% !important;
-  top: 40vh;
-  right: 0vw;
+  /* position: absolute; */
+  /* top: 20vh; */
+  /* right: 10vw; */
   background: rgba(255, 255, 255, 0.54);
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
