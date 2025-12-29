@@ -448,17 +448,22 @@
     <link rel="stylesheet" href="Nirvana.css" />
     <link rel="stylesheet" href="Buttons.css" />
     <link rel="stylesheet" href="horizontal_scroll.css" />
+    <link rel="stylesheet" href="Responsive.css" />
 
     <title>Nirvana | By PCPL</title>
   </head>
   <body>
     <!---------------------------------------------- Hero Section -------------------------------------------------------------->
     <div
-      class="container-fluid p-0 d-flex align-items-center justify-content-evenly"
+      class="container-fluid p-0 d-flex align-items-center justify-content-evenly flex-wrap"
       id="home"
       style="background-color: #026aae"
     >
-      <img src="Assets/Elevation_vertical.png" class="w-25" alt="..." />
+      <img
+        src="Assets/Elevation_vertical.png"
+        class="w-25 hero-img"
+        alt="..."
+      />
 
       <div
         class="hero-sub-container border d-flex align-items-center justify-content-center flex-column boxShadow"
@@ -491,7 +496,7 @@
 
     <!---------------------------------------------- Overview -------------------------------------------------------------->
     <div
-      class="container-fluid bg-blue"
+      class="container-fluid bg-blue align-items-center d-flex justify-content-center"
       id="overview"
       style="padding: 70px 0px"
     >
@@ -502,7 +507,7 @@
           <span></span><span>&nbsp;Overview&nbsp;</span><span></span>
         </div> -->
         <div
-          class="w-48 border p-5 boxShadow my-flex flex-column gap-2"
+          class="blue-para w-48 border p-5 boxShadow my-flex flex-column gap-2"
           style="border-radius: 20px; background-color: #274c77"
         >
           <!-- <h1
@@ -577,7 +582,7 @@
           data-aos-once="true"
         />
         <div
-          class="w-48 border p-4 boxShadow my-flex flex-column gap-2"
+          class="blue-para w-48 border p-4 boxShadow my-flex flex-column gap-2"
           style="border-radius: 20px; background-color: #274c77"
         >
           <!-- <h1
@@ -642,7 +647,7 @@
         </div>
 
         <p
-          class="bg-blue p-2 m-0"
+          class="bg-blue p-2 m-0 my-paragraph"
           style="z-index: 5; border-radius: 10px; width: 80%"
         >
           Our amenities are created to provide a harmonious balance of comfort,
@@ -749,7 +754,7 @@
         </div>
       </div>
       <h2
-        class="text-center w-100 p-4"
+        class="text-center w-100 p-4 space-crafted"
         style="
           font-family: 'poppin';
           font-size: 50px;
@@ -774,7 +779,7 @@
         </div>
 
         <div
-          class="container-fluid w-48 boxShadow"
+          class="container-fluid w-48 boxShadow map"
           style="padding: 0px; border-radius: 10px; overflow: hidden"
           data-aos="slide-right"
           data-aos-duration="1200"
@@ -1031,7 +1036,7 @@
           <span></span><span>&nbsp;Floor Plan&nbsp;</span><span></span>
         </div>
 
-        <div class="container-fluid floor-plan center-element mb-2 d-flex">
+        <div class="container-fluid floor-plan center-element mb-2 d-flex typical-f">
           <div
             class="container-fluid floor-plan-child w-80 p-0 d-flex"
             data-aos="slide-left"
@@ -1099,9 +1104,9 @@
 
     <!---------------------------------------------- extra section -------------------------------------------------------------->
 
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 reraDetails">
       <div
-        class="container-xl boxShadow d-flex flex-wrap align-items-center"
+        class="container-xl boxShadow d-flex flex-wrap align-items-center "
         style="
           border-radius: 20px;
           background-color: white;
@@ -1178,7 +1183,7 @@
           </div>
         </div>
         <div
-          class="container-fluid w-48 border-start border-dark d-flex flex-column justify-content-center align-items-start p-3"
+          class="container-fluid w-48 border-start border-dark d-flex flex-column justify-content-center align-items-start p-3 reraDetails-right"
         >
           <div class="card-body">
             <h5 class="fs-1 font1">NIRVANA SPRINGS</h5>
@@ -1226,11 +1231,11 @@
 
     <script>
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 20,
         loop: true,
+        spaceBetween: 20,
         autoplay: {
           delay: 2000,
+          disableOnInteraction: false,
         },
         pagination: {
           el: ".swiper-pagination",
@@ -1239,6 +1244,22 @@
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
+        },
+
+        // 🔹 Responsive breakpoints
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          576: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
         },
       });
     </script>
